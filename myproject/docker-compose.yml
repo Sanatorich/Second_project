@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    environment:
+      - PYTHONUNBUFFERED=1
+      - DEBUG=1 # Только для разработки! В production установить 0
+      - ALLOWED_HOSTS=* # Только для разработки! В production указывать допустимые хосты
